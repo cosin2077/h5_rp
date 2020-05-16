@@ -9,10 +9,12 @@ html,body,.app{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     box-sizing: border-box;
+    padding-top: 3.333rem;
 }
 .app .content{
-    height: 30px;
-    line-height: 30px;
+    height: 1rem;
+    line-height: 1rem;
     background-color: #4682b452;
     border-radius: 5px;
+    font-size: .8rem;
 }
