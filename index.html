@@ -38,12 +38,14 @@
                 },delay)
             }
         }
+        // 1344 -> 250px;
+
         function render(){
             let clientHeight = document.documentElement.clientHeight;
-            app.style['padding-top'] = clientHeight / 2 - height + 'px';
+            app.style['padding-top'] = clientHeight/1344 * 250 + 'px';
         }
         render();
-        window.onresize = delay(render,100)
+        window.onresize = delay(render,400)
     </script>
 </body>
 </html>
