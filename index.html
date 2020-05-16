@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>H5 测试</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="content">
+            我是内容
+        </div>
+    </div>
+    <script src="./app.js"></script>
+    <script>
+        let app = document.querySelector('.app');
+        let content = document.querySelector('.content');
+        let height = content.getBoundingClientRect().height / 2;
+        function throttle(fn, delay){
+            let throttled = false;
+            return function(){
+                if(throttled) return;
+                throttled = true
+                setTimeout(()=>{
+                    fn.apply(this)
+                    throttled = false
+                }, delay)
+            }
+        }
+        function delay(fn,delay){
+            let timer = null;
+            return function(){
+                clearTimeout(timer)
+                timer = setTimeout(()=>{
+                    fn.apply(this)
+                    timer = null;
+                },delay)
+            }
+        }
+        function render(){
+            let clientHeight = document.documentElement.clientHeight;
+            app.style['padding-top'] = clientHeight / 2 - height + 'px';
+        }
+        render();
+        window.onresize = delay(render,100)
+    </script>
+</body>
+</html>
