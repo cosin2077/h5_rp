@@ -1,0 +1,18 @@
+html,body,.app{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+.app{
+    background-image: url('./iphone6.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+}
+.app .content{
+    height: 30px;
+    line-height: 30px;
+    background-color: #4682b452;
+    border-radius: 5px;
+}
